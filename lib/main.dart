@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth_flutter/features/auth/ui/widgets/signin/auth_signin.dart';
+import 'package:firebase_auth_flutter/features/auth/ui/widgets/signup/auth_signup.dart';
 import 'package:flutter/material.dart';
 import 'core/firebase_initializer.dart';
-import 'features/auth/auth_service.dart';
 import 'features/auth/ui/auth_page.dart';
-import 'features/home_page.dart';  // N'oubliez pas d'importer AuthPage
+import 'features/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Auth Firebase Test',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
       ),
       home: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
